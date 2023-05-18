@@ -1,0 +1,404 @@
+
+/* typography styles for the standard column of content, other classes may have typography ajusted further down CSS */
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    padding: 0;
+    /* text was slightly crowded, this adjustment spaces things out, more aesthetically pleasing */
+    line-height: 150%;
+}
+
+h1 {
+    font-family: 'VT323', monospace;
+}
+
+h2 {
+    font-family: 'VT323', monospace;
+    font-size: 2em;
+}
+
+h3 {
+    font-family: 'VT323', monospace;
+    font-size: 2em
+    }
+
+/* applied a natural box layout model to all elements, but allowing components to change */
+
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* this makes big images fit their container */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* skip link hidden, only for screen readers, if visible it affects aesthetics of page */
+.skipLink {
+    display: none;
+}
+
+    /* prevents sticky nav on mobile */
+@media screen and (max-width:700px) {
+    .theHero__container {
+        position: static;
+    }
+}
+
+    /* different div for index page, as adding padding to this flex container affected other pages */
+.theHero__logoBar {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 28px;
+    padding-right: 20px;
+}
+
+.theHero__logo {
+    display: flex;
+    justify-content: space-between;
+}
+
+ .theHero__nav {
+    color: #ffffff;
+
+    text-align: right;
+
+    padding: 10px 10px;
+    margin: 0 40px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style-type: none;
+}
+
+    /* ensures nav bar is tidy at mobile */
+@media screen and (max-width:700px) {
+    .theHero__nav {
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding-bottom: 15px;
+    }
+}
+
+.theHero__links {
+    font-family: 'VT323', monospace;
+    font-size:24px;
+    flex: 1;
+    display: list-item;
+    text-align: center;
+    margin-right: 20px;
+    padding-left: 25px;
+    justify-content: flex-end;
+    white-space: nowrap;
+}
+
+.theHero__links a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 1px;
+    position: relative;
+}
+
+.bigHero__container {
+    height: 100vh;
+    /* doubled this so you can see the effect */
+    background-image: url(images/interface-web-header.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-size: 24px
+}
+
+/* ::before and ::after creates a gradual line under link on hover */
+/* cite? */
+.theHero__links a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    background: #ffffff;
+    height: 1px;
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.theHero__links a:hover:after {
+    transform: scale(1);
+    transform-origin: bottom left;
+}
+
+.theHero__navLogo {
+    background-image: url();
+    background-position: 20px center;
+    padding: 40px;
+    padding-left: 90px;
+    background-repeat: no-repeat;
+    /*background-color: #ffffff;*/
+    background-size: 100px;
+    margin: 0;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-indent: -20000em;
+    /*text indent removes text in top left corner behind logo */
+}
+
+/* ensures media is presentable at mobile view */
+@media screen and (min-width: 700px) {
+    .theHero__links {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+/* main header style */
+
+.bigHeader {
+    /* background-color: #000000; */
+    min-height: 80vh;
+    /* made this bigger as the nav is taller */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bigHeader__content {
+    font-family: 'VT323', monospace;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.bigHeader__content a {
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 0.3rem;
+    background: #FFFFFF;
+    margin-top: 1rem;
+    color: #615159;
+    text-shadow: none;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.bigHeader__content a:hover {
+    background-color: #0000005b;
+    background-blend-mode: multiply;
+    color: #ffffff;
+}
+
+/* standard header style */
+
+.standardHeader__content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.standardHeader__content h1 {
+    font-family: 'VT323', monospace;
+    color: #003b49;
+    margin: 0;
+    padding: 0.5rem;
+}
+
+.standardHeader__content p {
+    color: #182C3A;
+    margin: 0;
+    padding: 0.5rem 0 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+/* content-column code */
+
+.contentColumn {
+    padding: 40px 20px;
+}
+
+.contentColumn__content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* end .content-column code */
+
+.standard-header {
+    padding: 40px 10px 10px 10px; 
+    background: black;
+}
+
+.standard-header__content {
+ max-width: 1100px;
+  margin: 0 auto;
+}
+.standard-header__content h1 {margin:0; padding:0;}
+.standard-header__content p {margin:0; padding:0rem 0 0;}
+
+/* this .content-column code is common to a lot of these patterns */
+
+.content-column {
+    /* padding: 40px 20px;  */
+    background-color: black;
+}
+
+.content-column__content {
+    /* max-width: 900px; */
+    margin: 0 auto;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.content-subsection {
+    background-color: grey;
+}
+
+
+
+/* you can use the .editable-text class to modify the typography for the standard column of content */
+
+.editable-text img {margin: 1rem 0;}
+.editable-text h2 {margin:0; padding: 20px 200px;  color:green;}
+.editable-text h3 {margin:0; padding: 20px 200px; color:black;}
+.editable-text p {margin:0; padding: 5px 200px 15px 180px;  color: white;}
+/* end .content-column code */
+
+#avatar {
+    padding: 10px 0;
+}
+
+/*Footer*/
+
+.page-footer {
+    font-family: 'VT323', monospace;
+    background: #333;
+    min-height: 20vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color:white;
+}
+
+.page-footer a {color: greenyellow;}
+
+.page-footer .social-media {
+    display: flex;
+    list-style-type: none;
+}
+
+.page-footer .social-media li {
+    padding: 0 1rem;
+}
+
+/*About Page*/
+
+@media screen and (min-width: 700px) {
+    .logo-links {
+        display: flex;
+        padding-top: 3rem;
+        /* position:fixed; width: 100%;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        background:white; */
+        border-bottom:1px solid #eee;
+    }
+}
+
+.logo__text {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+}
+
+.logo__links {
+    margin: 0 0 1rem 0;
+    padding: 0 0 0 1rem;
+    margin-left: auto;
+    display: flex;
+    list-style-type: none;
+}
+
+.logo__links li {
+    padding: 0.5rem 0.5rem 0.5rem 0;
+    text-transform: uppercase;
+}
+
+@media screen and (min-width: 700px) {
+    .logo__links {
+        margin: 1rem 2rem 1rem auto;
+    }
+}
+
+.logo__links li+li {
+    padding-left: 0.5rem;
+    border-left: 1px solid #eee;
+}
+
+@media screen and (min-width: 700px) {
+    .logo__links li {
+        padding: 0.5rem 2rem;
+    }
+    .logo__links li+li {
+        border-left: none;
+    }
+}
+
+.standard-header {
+    padding: 40px 20px 20px 20px; 
+}
+
+.standard-header__content {
+ color: green;
+ max-width: 2000px;
+  margin: 0 auto;
+  
+}
+
+.standard-header__content.about {
+    margin-bottom: 10px;
+}
+
+.editable-text.about {
+    padding: 0 20px;
+}
+
+.standard-header__content
+.standard-header__content h1 {margin:0; padding:0; font-size: 2.5rem;}
+.standard-header__content p {margin:0; padding:0.5rem 0 0; font-size: 1.25rem; font-weight:bold;}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+
+.row {
+    display: flex;
+    margin:0; padding: 10px 200px;
+    
+  }
+  
+  .column {
+    flex: 33.33%;
+    padding: 5px;
+  }
+
+  #hp  {
+    float: left;    
+     margin: 0 15px 0 0;
+    }
+
+    
